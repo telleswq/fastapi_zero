@@ -68,6 +68,7 @@ def mock_db_time():
 async def user(session):
     password = 'testtest'
     user = UserFactory(password=get_password_hash(password))
+
     session.add(user)
     await session.commit()
     await session.refresh(user)
